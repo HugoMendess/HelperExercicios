@@ -124,3 +124,44 @@ img{
     font-family: 'Times New Roman', Times, serif;
     color: #2c78ff;
 }
+
+/* Responsivo */
+
+@media (max-width: 800px) {
+
+    .header-menu .menu{
+        margin-top: 10px;
+    }
+
+    .menu .btn-clear{
+
+        padding: 6px 14px;
+        border-radius: 5px;
+    }
+
+    .menu .btn-clear:hover{
+
+        padding: 4px 12px;
+        border-radius: 5px;
+    }
+    .section-input{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .section-input-dados .btn{
+        margin: 20px 10px;
+        width: 90%;
+      
+    }
+
+    .section-input .input{
+        width: 90%;
+    }
+
+    .section-title h2{
+        font-size: 1.1em;
+    }
+
+   
+}

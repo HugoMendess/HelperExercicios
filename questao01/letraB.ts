@@ -1,18 +1,23 @@
-
+// Pegando o botão
 let btn = document.querySelector('.btn')!;
-
+//Pegando o campo input no HTML
 let campo = document.querySelector('#palavra-input')! as HTMLInputElement;
+// Variavel que seleciona o campo do resultado
 let resultP = document.getElementById('result')!;
 
-// Vetor com as vogais para comparação
-const vetorVogais: String[] = ['a', 'e', 'i', 'o', 'u'];
+//variaveis total e result, uma retorna a quantidade de vogais na palavra e a outra retorna o texto para o HTML
 let total = 0;
 let result: string;
 
+// Evento de click, quando o botão é clicado, a função de callback verifica se o campo passado é diferente de nulo, se sim ele chama a função que verifica quantas vogais tem na palavra, caso seja nulo ele exibe uma mensagem na tela.
 btn.addEventListener('click', () =>{
     //Testando se o valor foi capturado
    console.log(campo.value);
-   verificaVogais(campo.value);
+
+   if(campo.value != '') verificaVogais(campo.value);
+   else {
+       resultP.innerText = 'Informe uma palavra/frase';
+   }
 
   
 });
@@ -37,6 +42,7 @@ function verificaVogais(frase: string){
 
     // colocando o texto do resultado na tela    
     resultP.innerText  = result;
+    total = 0;
 }
 
 
