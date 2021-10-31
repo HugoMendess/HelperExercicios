@@ -29,19 +29,17 @@ function retornaName(num) {
 }
 retornaName(id_name);
 // Letra C - Crie uma função que apague um item da lista a partir de um id passado
-var id_clear = 2;
+var id_clear = 3; // id do item a ser removido da lista
+// função que remove o elemento com id 3 da lista
 function removeId(num) {
-    for (var i = 0; i < lista.length; i++) {
-        if (lista[i].id == num) {
-            lista.splice(num, 1);
+    // forEach que percorre toda a lista, o item começa de 0 logo foi preciso somar 1 para que o item fosse de 1 a 4(Para comparar com o id dentro da lista e não o id do vetor que vai de 0 a 3)
+    lista.forEach(function (item) {
+        // Verifica se o indexOf + 1 da lista é igual ao id passado por parametro, se sim ele remove o elemento da lista e retorna ela.        
+        if (lista.indexOf(item) + 1 == num) {
+            lista.splice(lista.indexOf(item), 1);
             console.log(lista);
+            // console.log(lista[lista.indexOf(item)]);
         }
-    }
-   
+    });
 }
-
 removeId(id_clear);
-
-
-// Letra D - Crie uma função que altere a bio ou o name a partir de um id passado
-
