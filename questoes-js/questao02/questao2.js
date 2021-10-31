@@ -37,9 +37,22 @@ function removeId(num) {
         // Verifica se o indexOf + 1 da lista é igual ao id passado por parametro, se sim ele remove o elemento da lista e retorna ela.        
         if (lista.indexOf(item) + 1 == num) {
             lista.splice(lista.indexOf(item), 1);
-            console.log(lista);
             // console.log(lista[lista.indexOf(item)]);
         }
     });
+    console.log(lista);
 }
 removeId(id_clear);
+// Letra D - Crie uma função que altere a bio ou o name a partir de um id passado
+var id_alter = 4;
+function alteraBio(num) {
+    // ForEach que percorre toda a lista e verifica se a lista com o indexOf(item) + 1 é igual ao numero passado. Somei +1 pq o indexOf do vetor começa de 0.
+    lista.forEach(function (item) {
+        if (lista.indexOf(item) + 1 == num) {
+            lista[lista.indexOf(item)].bio = 'A bio foi alterada';
+            lista[lista.indexOf(item)].name = 'Hugo Mendes';
+        }
+    });
+    console.log(lista);
+}
+alteraBio(id_alter);
