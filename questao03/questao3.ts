@@ -1,6 +1,6 @@
 //  3 - Crie uma função que receba uma lista (valide se é numérica) e retorne outra contendo:
 
-let numeros: Array<Object> = [1, 2, 3, 4, 5, 6, 7, 8];
+let numeros: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 let maior: number = 0;
 let menor: number = 0;
 
