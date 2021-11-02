@@ -74,7 +74,7 @@ function alteraDados(id, name, bio, btn) {
             break;
         }
         // Verifica se o id passado está na lista e faz a troca.
-        else if (id.value == td_inputID[i].innerHTML) {
+        else if (Number(id.value) === Number(td_inputID[i].innerHTML)) {
             td_inputID[i].innerHTML = id.value;
             td_inputName[i].innerHTML = name.value;
             td_inputBio[i].innerHTML = bio.value;

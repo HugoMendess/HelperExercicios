@@ -98,8 +98,8 @@ function alteraDados(id: Element, name: Element, bio: Element, btn: Element){
             break;
         }
 
-        // Verifica se o id passado está na lista e faz a troca.
-        else if(id.value == td_inputID[i].innerHTML){
+        // Verifica se o id passado está na lista e faz a troca. Aqui eu converti os dois pra Number
+        else if(Number(id.value) === Number(td_inputID[i].innerHTML)){
           
             td_inputID[i].innerHTML = id.value;
             td_inputName[i].innerHTML = name.value;
