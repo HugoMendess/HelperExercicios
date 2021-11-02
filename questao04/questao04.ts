@@ -17,7 +17,7 @@ let tbody: Element = document.getElementById('tabela')!;
 
 
 // função que mostra os dados do vetor na tabela HTML
-function listaTabela(tabela: Element) {
+const listaTabela = (tabela: Element) => {
 
     for (let i: number = 0; i < listaElementos.length; i++) {
         // Toda vez que o loop for executado a função vai criar todos esses elementos tr e td
@@ -70,7 +70,7 @@ let inputBio: Element = document.getElementById('bio')!;
 let button: Element = document.getElementById('enviar')!;
 
 
-function alteraDados(id: Element, name: Element, bio: Element, btn: Element){
+const alteraDados = (id: Element, name: Element, bio: Element, btn: Element) =>{
     // Selecionando todos os inpust: ID, Name e Bio, retornando uma Node List
     let td_inputID = document.querySelectorAll('#id_input')!;
     let td_inputName = document.querySelectorAll('.td_name')!;
@@ -115,9 +115,10 @@ button.addEventListener('click', () =>{
 
 // Letra D - Excluir
 
-function deleteRow(i: Element){
+const deleteRow = (i: Element) => {
     document.getElementById('tabela')!.deleteRow(i);
 }
+
 
 
 

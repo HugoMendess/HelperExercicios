@@ -14,7 +14,7 @@ var listaElementos = [
 // Selecionando a tabela com o seletor css(tabela)
 var tbody = document.getElementById('tabela');
 // função que mostra os dados do vetor na tabela HTML
-function listaTabela() {
+function listaTabela(tabela) {
     for (var i = 0; i < listaElementos.length; i++) {
         // Toda vez que o loop for executado a função vai criar todos esses elementos tr e td
         var tr = document.createElement('tr');
@@ -41,10 +41,10 @@ function listaTabela() {
         tr.appendChild(td_btn);
         tr.classList.add('linhas');
         // Atribuindo o tr como filho da tabela.
-        tbody.appendChild(tr);
+        tabela.appendChild(tr);
     }
 }
-listaTabela();
+listaTabela(tbody);
 // Letra B
 // Pegando os dados passados pelo formulário
 var inputId = document.getElementById('id');
@@ -73,7 +73,7 @@ function alteraDados(id, name, bio, btn) {
             }, 4000);
             break;
         }
-        // Verifica se o id passado está na lista e faz a troca.
+        // Verifica se o id passado está na lista e faz a troca. Aqui eu converti os dois pra Number
         else if (Number(id.value) === Number(td_inputID[i].innerHTML)) {
             td_inputID[i].innerHTML = id.value;
             td_inputName[i].innerHTML = name.value;
@@ -86,6 +86,6 @@ button.addEventListener('click', function () {
     alteraDados(inputId, inputName, inputBio, button);
 });
 // Letra D - Excluir
-function deleteRow(i) {
+var deleteRow = function (i) {
     document.getElementById('tabela').deleteRow(i);
-}
+};
