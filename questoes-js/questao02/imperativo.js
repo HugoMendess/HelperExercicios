@@ -8,7 +8,7 @@ var list = [
 ];
 // Letra A -  Crie uma função que retorne a bio do id passado
 var id_funcional = 4;
-function mostraBio(num, list) {
+function mostrarBio(num, list) {
     var bio = '';
     for (var i = 0; i < list.length; i++) {
         if (list[i].id == num) {
@@ -16,7 +16,7 @@ function mostraBio(num, list) {
             return bio;
         }
     }
-    return "Não foi encontrado";
+    return bio;
 }
 console.log(mostraBio(id_funcional, list));
 // Letra B - Crie uma função que retorne o name do id passado
@@ -26,41 +26,38 @@ function retornaNome(num, list) {
     for (var i = 0; i < list.length; i++) {
         if (list[i].id == num) {
             nome = list[i].name;
-            return nome;
         }
     }
-    return "Não foi encontrado";
+    return nome;
 }
 console.log(retornaNome(name_fun, list));
 // Letra C - Crie uma função que apague um item da lista a partir de um id passado
 var id_clear = 3; // id do item a ser removido da lista
 // função que remove o elemento com id 3 da lista
-var remover = function (num, list) {
+function remover(num, list) {
     // forEach que percorre toda a lista, o item começa de 0 logo foi preciso somar 1 para que o item fosse de 1 a 4(Para comparar com o id dentro da lista e não o id do vetor que vai de 0 a 3)
     list.forEach(function (item) {
         // Verifica se o indexOf + 1 da lista é igual ao id passado por parametro, se sim ele remove o elemento da lista e retorna ela.        
         if (list.indexOf(item) + 1 == num) {
             list.splice(list.indexOf(item), 1);
-            return list;
             // console.log(lista[lista.indexOf(item)]);
         }
     });
-    return "Não foi encontrado";
-};
+    return list;
+}
 console.log(remover(id_clear, list));
 // Letra D - Crie uma função que altere a bio ou o name a partir de um id passado
 var altera = 1;
 var novaBio = 'A bio foi alterada';
 var novoNome = 'Hugo Mendes';
-var alterarBio = function (num, bio, nome, list) {
+function alterarBio(num, bio, nome, list) {
     // ForEach que percorre toda a lista e verifica se a lista com o indexOf(item) + 1 é igual ao numero passado. Somei +1 pq o indexOf do vetor começa de 0.
     list.forEach(function (item) {
         if (list.indexOf(item) + 1 == num) {
-            list[list.indexOf(item)].bio = bio;
-            list[list.indexOf(item)].name = nome;
-            return list;
+            list[list.indexOf(item)].bio = bio; // A nova bio passada como parametro da função
+            list[list.indexOf(item)].name = nome; // O novo nome passado como parametro da função
         }
     });
-    return "Não foi encontrado";
-};
+    return list;
+}
 console.log(alterarBio(altera, novaBio, novoNome, list));

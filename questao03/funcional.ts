@@ -1,8 +1,8 @@
 //  3 - Crie uma função que receba uma lista (valide se é numérica) e retorne outra contendo:
 
-let numeros: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8];
-let maior: number = 0;
-let menor: number = 0;
+let listaNumeros: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8];
+let maiorNumero: number = 0;
+let menorNumero: number = 0;
 
 
 
@@ -13,7 +13,7 @@ Array.min = (array: number[]): number =>{
 
 }
 
-console.log("O menor valor é: "+Array.min(numeros));
+console.log("O menor valor é: "+Array.min(listaNumeros));
 
 // - Letra B - O menor valor;
 
@@ -21,14 +21,14 @@ Array.max = (array: number[]): number =>{
     return Math.max.apply(Math, array);
 }
 
-console.log("O maior valor é: "+Array.max(numeros));
+console.log("O maior valor é: "+Array.max(listaNumeros));
 
 // - Letra C - O valor medio
 
-let medio: number = 0;
-let soma: number = 0;
+let valorMedio: number = 0;
+let valorSoma: number = 0;
 
-const resultMedio = (vetor: Array<Object>, medio: number, soma: number): string | number =>{
+const resultMedio = (vetor: Array<Object>, medio: number, soma: number): number =>{
 
     for(let i: number = 0; i < vetor.length; i++){
         soma = soma + Number(vetor[i]);
@@ -40,4 +40,4 @@ const resultMedio = (vetor: Array<Object>, medio: number, soma: number): string 
     
 }
 
-console.log(resultMedio(numeros, medio, soma));
+console.log(resultMedio(listaNumeros, valorMedio, valorSoma));

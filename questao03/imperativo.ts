@@ -28,7 +28,7 @@ console.log("O maior valor é: "+Array.max(numeros));
 let medio: number = 0;
 let soma: number = 0;
 
-const resultMedio = (vetor: Array<Object>, medio: number, soma: number): string | number =>{
+function resultMedio(vetor: Array<Object>, medio: number, soma: number): string | number{
 
     for(let i: number = 0; i < vetor.length; i++){
         soma = soma + Number(vetor[i]);
