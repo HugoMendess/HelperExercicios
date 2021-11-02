@@ -14,7 +14,7 @@ var listaElementos = [
 // Selecionando a tabela com o seletor css(tabela)
 var tbody = document.getElementById('tabela');
 // função que mostra os dados do vetor na tabela HTML
-function listaTabela(tabela) {
+var listaTabela = function (tabela) {
     for (var i = 0; i < listaElementos.length; i++) {
         // Toda vez que o loop for executado a função vai criar todos esses elementos tr e td
         var tr = document.createElement('tr');
@@ -43,7 +43,7 @@ function listaTabela(tabela) {
         // Atribuindo o tr como filho da tabela.
         tabela.appendChild(tr);
     }
-}
+};
 listaTabela(tbody);
 // Letra B
 // Pegando os dados passados pelo formulário
@@ -51,7 +51,7 @@ var inputId = document.getElementById('id');
 var inputName = document.getElementById('name');
 var inputBio = document.getElementById('bio');
 var button = document.getElementById('enviar');
-function alteraDados(id, name, bio, btn) {
+var alteraDados = function (id, name, bio, btn) {
     // Selecionando todos os inpust: ID, Name e Bio, retornando uma Node List
     var td_inputID = document.querySelectorAll('#id_input');
     var td_inputName = document.querySelectorAll('.td_name');
@@ -80,7 +80,7 @@ function alteraDados(id, name, bio, btn) {
             td_inputBio[i].innerHTML = bio.value;
         }
     }
-}
+};
 // Captura o evento de click e passa uma função altera dados
 button.addEventListener('click', function () {
     alteraDados(inputId, inputName, inputBio, button);

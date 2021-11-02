@@ -16,11 +16,11 @@ console.log("O maior valor é: " + Array.max(numeros));
 // - Letra C - O valor medio
 var medio = 0;
 var soma = 0;
-function valorMedio(vetor) {
+var valorMedio = function (vetor) {
     for (var i = 0; i < vetor.length; i++) {
         soma = soma + Number(vetor[i]);
     }
     medio = parseInt(soma / vetor.length);
     console.log("O valor medio é " + medio + "");
-}
+};
 valorMedio(numeros);

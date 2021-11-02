@@ -8,7 +8,7 @@ let menor: number = 0;
 
 // - Letra A -  O maior valor;
 
-Array.min = function(array: number[]){
+Array.min = (array: number[]) =>{
     return Math.min.apply(Math, array);
 }
 
@@ -16,7 +16,7 @@ console.log("O menor valor é: "+Array.min(numeros));
 
 // - Letra B - O menor valor;
 
-Array.max = function(array: number[]){
+Array.max = (array: number[]) =>{
     return Math.max.apply(Math, array);
 }
 
@@ -27,7 +27,7 @@ console.log("O maior valor é: "+Array.max(numeros));
 let medio: number = 0;
 let soma: number = 0;
 
-function valorMedio(vetor: Array<Object>){
+const valorMedio = (vetor: Array<Object>) =>{
 
     for(let i: number = 0; i < vetor.length; i++){
         soma = soma + Number(vetor[i]);
