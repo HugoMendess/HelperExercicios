@@ -208,17 +208,44 @@ img{
 }
 
 .dados-form{
-    margin: 30px auto;
+    margin: 50px auto;
     text-align: center;
     
+}
+
+.dados-form h3{
+    margin-bottom: 20px;
+    font-size: 1.2em;
 }
 
 
 
 .form-dados input{
+    padding: 8px 10px;
+    width: 260px;
+    margin: 10px 10px;
+
+}
+
+.form-dados #enviar{
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-dados #enviar:hover{
+    background-color: #fff;
+    border: 1px solid green;
+    color: green;
+}
+
+.btn-apagar{
+    background-color: red;
+    color: #fff;
     padding: 5px 10px;
-    width: 20%;
-
-    margin: 0px 10px;
-
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }

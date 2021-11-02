@@ -39,16 +39,18 @@
                         <th>Id</th>
                         <th>Nome</th>
                         <th>Biografia</th>
+                        <th>Apagar?</th>
                     </tr>
                 </table>
             </div>
 
             <div class="dados-form">
-                <form class="form-dados">
-                    <input type="text" placeholder="Informe o id" id="id">
-                    <input type="text" placeholder="Informe o nome" id="name">
-                    <input type="text" placeholder="Informe a biografia" id="bio">
-                    <input type="submit" placeholder="ENVIAR" id="submit">
+                <h3>Deseja modificar um elemento da lista?</h3>
+                <form class="form-dados" onsubmit="return false">
+                    <input type="text" placeholder="Informe o id" id="id" required>
+                    <input type="text" placeholder="Informe o nome" id="name" required>
+                    <input type="text" placeholder="Informe a biografia" id="bio" required>
+                    <input type="submit"  id="enviar">
                 </form>
             </div>
         </div>
