@@ -17,7 +17,7 @@ let tbody: Element = document.getElementById('tabela')!;
 
 
 // função que mostra os dados do vetor na tabela HTML
-function listaTabela() {
+function listaTabela(tabela: Element) {
 
     for (let i: number = 0; i < listaElementos.length; i++) {
         // Toda vez que o loop for executado a função vai criar todos esses elementos tr e td
@@ -51,7 +51,7 @@ function listaTabela() {
         tr.classList.add('linhas');
 
         // Atribuindo o tr como filho da tabela.
-        tbody.appendChild(tr);
+        tabela.appendChild(tr);
 
     }
 
@@ -59,7 +59,7 @@ function listaTabela() {
 
 }
 
-listaTabela();
+listaTabela(tbody);
 
 // Letra B
 
