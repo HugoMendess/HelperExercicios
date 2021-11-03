@@ -1,43 +1,43 @@
 //  3 - Crie uma função que receba uma lista (valide se é numérica) e retorne outra contendo:
 
-let numeros: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8];
-let maior: number = 0;
-let menor: number = 0;
+let listNumeros: Array<any> = [-2, 1, 3, 5, 7, 8, 9, '10', 'Hoje'] // Passando vetor com números e uma string
 
+// a função recebe uma lista do tipo any e retorna uma lista do tipo number
+const retornaLista = (list: Array<any>): Array<number> =>{
 
+    const novaLista: Array<number> = []; // Nova lista apenas com os valores number
 
-// - Letra A -  O maior valor;
+    for(let i: number = 0; i < list.length; i++){
+        // variavel que recebe o valor da posição atual do vetor como Number
+        let num: number = Number(list[i]);
 
-Array.min = (array: number[]): number =>{
-    return Math.min.apply(Math, array);
+        // verifica se o valor é um número, mesmo que em string como '10', se sim ele retorna o valor para dentro do vetor.
+        if(!isNaN(num)) novaLista[i] = num;
 
-}
-
-console.log("O menor valor é: "+Array.min(numeros));
-
-// - Letra B - O menor valor;
-
-Array.max = (array: number[]): number =>{
-    return Math.max.apply(Math, array);
-}
-
-console.log("O maior valor é: "+Array.max(numeros));
-
-// - Letra C - O valor medio
-
-let medio: number = 0;
-let soma: number = 0;
-
-const resultMedio = (vetor: Array<Object>, medio: number, soma: number): string | number =>{
-
-    for(let i: number = 0; i < vetor.length; i++){
-        soma = soma + Number(vetor[i]);
-        
     }
 
-    medio = parseInt(soma / vetor.length);
-    return medio;
+ 
+    const maior: number = Math.max.apply(null, novaLista);     // Variavel que pega o maior valor do novo vetor
+    const menor: number = Math.min.apply(null, novaLista);    // Variavel que pega o menor valor do novo vetor
+    let soma: number = 0; 
+    let medio: number = 0;
+
+    // for que percorre a lista somando todos os valores
+    for(let i: number = 0; i< novaLista.length; i++){
+        soma += novaLista[i];
+    }
+
+    // retorna o valor medio
+    medio = soma/novaLista.length;
+
+
+    console.log("O maior número é: "+maior);
+    console.log("O menor número é: "+menor);
+    console.log("O valor medio é :"+medio);
+
     
+    return novaLista;
 }
 
-console.log(resultMedio(numeros, medio, soma));
+
+console.log(retornaLista(listNumeros));
