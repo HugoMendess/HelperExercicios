@@ -1,43 +1,29 @@
 //  3 - Crie uma função que receba uma lista (valide se é numérica) e retorne outra contendo:
 
-let listaNumeros: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8];
-let maiorNumero: number = 0;
-let menorNumero: number = 0;
+let listNumeros: Array<any> = [-2, 1, 3, 5, 7, 8, 9, '10', 'Hoje'] // Passando vetor com números e uma string
+
+// a função recebe uma lista do tipo any e retorna uma lista do tipo number
+const retornaLista = (list: Array<any>): Array<number> => {
 
 
+    // função que filtra os valores number e retorna uma lista apenas com números
+    const validaNumeros: Array<number> = list.filter(list => (!isNaN(Number(list))));
+    // função que retorna um array com todos os números que sejam number, ou seja, o '10' vem como 10 agora.
+    const validaLista: Array<number> = validaNumeros.map((number: any) => Number(number));
 
-// - Letra A -  O maior valor;
+    const maior: number = Math.max.apply(null, validaLista);     // Variavel que pega o maior valor do novo vetor
+    const menor: number = Math.min.apply(null, validaLista);    // Variavel que pega o menor valor do novo vetor
 
-Array.min = (array: number[]): number =>{
-    return Math.min.apply(Math, array);
+    // Função que retorna o valor medio
+    const medio: number = validaLista.reduce((acumulador, elementoAtual, indice, arrayOriginal) => {
+
+        return Number(acumulador) + Number(elementoAtual);
+
+    });
+
+    return [maior, menor, medio];
 
 }
 
-console.log("O menor valor é: "+Array.min(listaNumeros));
 
-// - Letra B - O menor valor;
-
-Array.max = (array: number[]): number =>{
-    return Math.max.apply(Math, array);
-}
-
-console.log("O maior valor é: "+Array.max(listaNumeros));
-
-// - Letra C - O valor medio
-
-let valorMedio: number = 0;
-let valorSoma: number = 0;
-
-const resultMedio = (vetor: Array<Object>, medio: number, soma: number): number =>{
-
-    for(let i: number = 0; i < vetor.length; i++){
-        soma = soma + Number(vetor[i]);
-        
-    }
-
-    medio = parseInt(soma / vetor.length);
-    return medio;
-    
-}
-
-console.log(resultMedio(listaNumeros, valorMedio, valorSoma));
+console.log(retornaLista(listNumeros));
