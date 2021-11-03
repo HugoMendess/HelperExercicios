@@ -11,88 +11,42 @@ let list: Array<Object> = [
 
 
 // Letra A -  Crie uma função que retorne a bio do id passado
+const bio_id: number = 3; // Id do elemento ao qual a bio será retornada
 
-let id_funcional: number = 4;
+// função que recebe a lista e o id e filtra o vetor cujo o id é igual ao id passado com o filter, depois ela retorna a bio desse id com o metódo map
+const getBio = (list: Array<Object>, num: number) => list.filter(list =>(list.id === num)).map((list => `Bio: ${list.bio}`));
 
-
-const mostraBio = (num: number, list: Array<Object>): string | undefined =>{
-   let bio: string = '';
-   for(let i: number = 0; i<list.length; i++){
-       if(list[i].id == num){
-            bio = list[i].bio;
-      
-
-       }
-   }
-
-   return bio;
-
-}
-
-console.log(mostraBio(id_funcional, list));
-
+console.log(getBio(list, bio_id));
 
 // Letra B - Crie uma função que retorne o name do id passado
 
-let name_fun: number = 4;
+const name_id: number = 3; // Id do elemento ao qual a bio será retornada
 
-const retornaNome = (num: number, list: Array<Object>): string | undefined => {
+// função que recebe a lista e o id e filtra o vetor cujo o id é igual ao id passado com o filter, depois ela retorna o name desse id com o metódo map
+const getName = (list: Array<Object>, num: number) => list.filter(list =>(list.id === num)).map((list => `Name: ${list.name}`));
 
-    let nome: string = '';
+console.log(getName(list, name_id));
 
-    for (let i: number = 0; i < list.length; i++) {
-        if (list[i].id == num) {
-            nome = list[i].name;
-        }
-    }
-
-    return nome;
-}
-
-console.log(retornaNome(name_fun, list));
 
 // Letra C - Crie uma função que apague um item da lista a partir de um id passado
+const clear_id: number = 2;
 
-var id_clear = 3; // id do item a ser removido da lista
+// função que filtra a lista e retorna uma nova lista sem o ida passado, excluindo ele
+const getClear = (list: Array<Object>, num: number) => list.filter(list =>(list.id != num));
 
-// função que remove o elemento com id 3 da lista
-const remover = (num: number, list: Array<Object>):  Array<Object> | undefined => {
-    
-    // forEach que percorre toda a lista, o item começa de 0 logo foi preciso somar 1 para que o item fosse de 1 a 4(Para comparar com o id dentro da lista e não o id do vetor que vai de 0 a 3)
-    list.forEach((item) =>{
-        // Verifica se o indexOf + 1 da lista é igual ao id passado por parametro, se sim ele remove o elemento da lista e retorna ela.        
-        if(list.indexOf(item) + 1 == num){
-            list.splice(list.indexOf(item), 1);
-            
-           
-            // console.log(lista[lista.indexOf(item)]);
-        }
-    });
-
-    return list;
-    
-}
-
-console.log(remover(id_clear, list));
-
-
+console.log(getClear(list, clear_id));
 
 // Letra D - Crie uma função que altere a bio ou o name a partir de um id passado
 
-let altera: number = 1;
-let novaBio: string = 'A bio foi alterada';
-let novoNome: string = 'Hugo Mendes';
+const alter_id: number = 4;
+const newName: string = 'Hugo Mendes';
+const newbio: string = 'A Bio foi alterada';
 
-const alterarBio = (num: number,bio: string, nome: string, list: Array<Object>):  Array<object> | undefined =>{
+//
+const getAlter = (list: Array<Object>, num: number) => list.filter(list =>(list.id === num));
 
-    // ForEach que percorre toda a lista e verifica se a lista com o indexOf(item) + 1 é igual ao numero passado. Somei +1 pq o indexOf do vetor começa de 0.
-    list.forEach((item) =>{
-        if(list.indexOf(item)+ 1 == num){
-            list[list.indexOf(item)].bio = bio;
-            list[list.indexOf(item)].name = nome;
-        }
-    });
 
-   return list;
-}
-console.log(alterarBio(altera, novaBio, novoNome, list));
+
+// const setAlter = (nome: string, bio: string, )
+console.log(getAlter(list, alter_id));
+
